@@ -7,23 +7,15 @@ class LinkedListNode
   end
 end
 
-def reverse_list(list, previous=nil)
-  save next.node (node2)
-  set next.node = previous (node2)
-
-
-
-  temp = list.next_node
-  list.next_node = previous
-  reverse_list(list, previous)
-
-  # if list
-  #   temp = list.value
-
-  # else
-    
-  
-  # end
+def reverse_list(list_item, previous=nil)
+  holder = list_item.next_node
+  list_item.next_node = previous
+  previous = list_item
+  if holder
+    reverse_list(holder, previous)
+  else
+    return list_item
+  end
 end
 
 def print_values(list_node)
